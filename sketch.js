@@ -1,7 +1,7 @@
 // sketch voor Lennert
 
 
-let minSelected = 30; // tijd in minuten voor de timer
+let minSelected = 1; // tijd in minuten voor de timer
 let startDate;
 let alarmSound;
 let timeTicking;
