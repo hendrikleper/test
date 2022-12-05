@@ -104,7 +104,7 @@ function sleep(millisecondsDuration)
 }
 
 function camswitch0(){
-  capture.stop();
+  stopCapture();
   capture.remove();
   var constraints = {
     audio: false,
@@ -120,7 +120,7 @@ function camswitch0(){
   capture.hide();
 }
 function camswitch1(){
-  capture.stop();
+  stopCapture();
   capture.remove();
   var constraints = {
     audio: false,
@@ -136,6 +136,14 @@ function camswitch1(){
   capture.hide();
 }
 
+function stopCapture() {
+  let stream = capture.elt.srcObject;
+  let tracks = stream.getTracks();
+  tracks.forEach(function(track) {
+    track.stop();
+  });
+  capture.elt.srcObject = null;
+}
 
 
 function touchStarted () {
