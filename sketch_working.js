@@ -7,6 +7,7 @@ let alarmSound;
 let timeTicking;
 let state = true;
 var capture;
+let schaal = 0.8;
 
 function preload() {
   soundFormats('mp3');
@@ -42,7 +43,8 @@ function draw() {
     camswitch1();
     state = false;
   }
-
+  imageMode(CENTER);
+  image(capture, 0.5*width, 0.5*height, schaal*width, schaal*capture.height*width/capture.width); // to fit width
   image(capture, 0, 0, displayWidth, displayHeight+80);
   let currentDate = new Date().getTime();
   let minsLeft = secondsToHms(ceil((startDate - currentDate) / 1000));
