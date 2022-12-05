@@ -99,8 +99,7 @@ function sleep(millisecondsDuration) {
 }
 
 function camswitch0() {
-  capture.stop();
-  capture.remove();
+
   var constraints = {
     audio: false,
     video: {
@@ -113,8 +112,7 @@ function camswitch0() {
 }
 
 function camswitch1() {
-  capture.stop();
-  capture.remove();
+
   var constraints = {
     audio: false,
     video: {

@@ -104,6 +104,8 @@ function sleep(millisecondsDuration)
 }
 
 function camswitch0(){
+  capture.stop();
+  capture.remove();
   var constraints = {
     audio: false,
     video: {
@@ -118,6 +120,8 @@ function camswitch0(){
   capture.hide();
 }
 function camswitch1(){
+  capture.stop();
+  capture.remove();
   var constraints = {
     audio: false,
     video: {
@@ -131,6 +135,8 @@ function camswitch1(){
   capture = createCapture(constraints);
   capture.hide();
 }
+
+
 
 function touchStarted () {
   if (!fullscreen()) {
