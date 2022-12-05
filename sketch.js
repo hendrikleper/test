@@ -108,7 +108,7 @@ function camswitch0(){
     audio: false,
     video: {
       facingMode: {
-        exact: "user"
+        ideal: 'user'
         //facingMode: "user"
       }
     }
@@ -122,7 +122,7 @@ function camswitch1(){
     audio: false,
     video: {
       facingMode: {
-        exact: "environment"
+        ideal: 'environment'
         //facingMode: "user"
       }
     }
