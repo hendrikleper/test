@@ -24,7 +24,9 @@ function setup() {
   var constraints = {
     audio: false,
     video: {
-      facingMode: "environment"
+      facingMode: {
+        exact = "environment"
+      }
     }
   };
   //capture.elt.setAttribute('playsinline', '');
@@ -34,8 +36,8 @@ function setup() {
 }
 
 function draw() {
-  background(50,50,50);
-  if (state == true){
+  background(50, 50, 50);
+  if (state == true) {
     getTime();
     camswitch1();
     state = false;
@@ -46,14 +48,14 @@ function draw() {
   let minsLeft = secondsToHms(ceil((startDate - currentDate) / 1000));
 
   if (currentDate < startDate) {
-  	fill(255);
-  	text('THERE IS SOMETHING GOING TO HAPPEN', 0, 100, width);
-  	text((minsLeft), 0, 160, width);
+    fill(255);
+    text('THERE IS SOMETHING GOING TO HAPPEN', 0, 100, width);
+    text((minsLeft), 0, 160, width);
   }
   if ((currentDate >= startDate) && timeTicking) {
     timeTicking = false;
     camswitch0();
-    fill(255,0,0);
+    fill(255, 0, 0);
     text('NOW', 0, 30, width);
     takeABreak();
   }
@@ -71,8 +73,8 @@ function secondsToHms(d) {
   d = Number(d);
   let h = floor(d / 3600);
   let m = floor(d % 3600 / 60);
-	let s = floor(d % 3600 % 60);
-	return nf(h, 2) + ':' + nf(m, 2) + ':' + nf(s, 2);
+  let s = floor(d % 3600 % 60);
+  return nf(h, 2) + ':' + nf(m, 2) + ':' + nf(s, 2);
 }
 
 // Not is use
@@ -82,8 +84,7 @@ function stopSound() {
 }
 
 // Wait a bit & do some functions while cam 2 is on
-async function takeABreak()
-{
+async function takeABreak() {
   await sleep(1000);
   let timeStamp = year() + "-" + month() + "-" + day() + "-" + hour() + "-" + minute() + "-" + second();
   //save(timeStamp);
@@ -94,14 +95,13 @@ async function takeABreak()
 }
 
 // a custom 'sleep' or wait' function, that returns a Promise that resolves only after a timeout
-function sleep(millisecondsDuration)
-{
+function sleep(millisecondsDuration) {
   return new Promise((resolve) => {
     setTimeout(resolve, millisecondsDuration);
   })
 }
 
-function camswitch0(){
+function camswitch0() {
   var constraints = {
     audio: false,
     video: {
@@ -112,12 +112,14 @@ function camswitch0(){
   capture = createCapture(constraints);
   capture.hide();
 }
-function camswitch1(){
+
+function camswitch1() {
   var constraints = {
     audio: false,
     video: {
-      facingMode: "environment"
-        //facingMode: "user"
+      facingMode: {
+        exact = "environment"
+      }
     }
   };
   //capture.elt.setAttribute('playsinline', '');
@@ -125,7 +127,7 @@ function camswitch1(){
   capture.hide();
 }
 
-function touchStarted () {
+function touchStarted() {
   if (!fullscreen()) {
     fullscreen(true);
   }
@@ -140,5 +142,5 @@ function windowResized() {
  * touch events, like swiping left for "back" or scrolling the page.
  */
 document.ontouchmove = function(event) {
-    event.preventDefault();
+  event.preventDefault();
 };
