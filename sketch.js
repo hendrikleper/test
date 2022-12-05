@@ -24,7 +24,7 @@ function setup() {
     audio: false,
     video: {
       facingMode: {
-        exact: "environment"
+        ideal: "environment"
       }
     }
   };
@@ -41,7 +41,7 @@ function draw() {
     state = false;
   }
 
-  image(capture, 0, 0, displayHeight, displayWidth);
+  image(capture, 0, 0, windowWidth, windowHeight);
   let currentDate = new Date().getTime();
   let minsLeft = secondsToHms(ceil((startDate - currentDate) / 1000));
 
