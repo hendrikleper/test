@@ -19,7 +19,7 @@ function setup() {
   //createCanvas(windowWidth,windowHeight);
   createCanvas(displayWidth, displayHeight);
   frameRate(30);
-  textSize(38);
+  textSize(36);
   textAlign(CENTER, TOP);
 
   var constraints = {
@@ -45,7 +45,7 @@ function draw() {
   }
   imageMode(CENTER);
   image(capture, 0.5*width, 0.5*height, schaal*width, schaal*capture.height*width/capture.width); // to fit width
-  
+
   let currentDate = new Date().getTime();
   let minsLeft = secondsToHms(ceil((startDate - currentDate) / 1000));
 
