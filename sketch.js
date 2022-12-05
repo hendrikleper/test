@@ -15,7 +15,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
+  //createCanvas(windowWidth,windowHeight);
+  createCanvas(displayWidth, displayHeight);
   frameRate(30);
   textSize(38);
   textAlign(CENTER, TOP);
@@ -23,6 +24,10 @@ function setup() {
   var constraints = {
     audio: false,
     video: {
+      mandatory: {
+        maxWidth: videoWidth,
+        maxHeight: videoHeight
+      },
       facingMode: {
         ideal: "environment"
       }
@@ -105,6 +110,10 @@ function camswitch0(){
   var constraints = {
     audio: false,
     video: {
+      mandatory: {
+        maxWidth: videoWidth,
+        maxHeight: videoHeight
+      },
       facingMode: {
         exact: "user"
         //facingMode: "user"
@@ -118,6 +127,10 @@ function camswitch1(){
   var constraints = {
     audio: false,
     video: {
+      mandatory: {
+        maxWidth: videoWidth,
+        maxHeight: videoHeight
+      },
       facingMode: {
         exact: "environment"
         //facingMode: "user"
