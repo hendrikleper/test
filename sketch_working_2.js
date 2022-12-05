@@ -1,6 +1,5 @@
 // sketch voor Lennert
 
-
 let minSelected = 1; // tijd in minuten voor de timer
 let startDate;
 let alarmSound;
@@ -14,7 +13,6 @@ function preload() {
 }
 
 function setup() {
-  //createCanvas(windowWidth,windowHeight);
   createCanvas(displayWidth, displayHeight);
   frameRate(30);
   textSize(38);
@@ -100,8 +98,8 @@ function sleep(millisecondsDuration)
 }
 
 function camswitch0(){
-  //stopCapture();
-  capture.remove();
+  stopCapture();
+  //capture.remove();
   var constraints = {
     audio: false,
     video: {
@@ -115,8 +113,8 @@ function camswitch0(){
   capture.hide();
 }
 function camswitch1(){
-  //stopCapture();
-  capture.remove();
+  stopCapture();
+  //capture.remove();
   var constraints = {
     audio: false,
     video: {
@@ -125,7 +123,6 @@ function camswitch1(){
       }
     }
   };
-
   capture = createCapture(constraints);
   capture.hide();
 }
