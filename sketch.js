@@ -26,15 +26,13 @@ function setup() {
   var constraints = {
     audio: false,
         video: {
-            facingMode: { exact: "user" },
-            //facingMode: "environment",
+            //facingMode: { exact: "user" },
+            facingMode: "environment",
             width: w,
             height: h
         }
-    }, function() {
-        console.log('capture ready.')
-    });
-    capture.elt.setAttribute('playsinline', '');
+    };
+    capture = createCapture(constraints);
     capture.hide();
     capture.size(w, h);
     canvas = createCanvas(w, h);
@@ -115,10 +113,8 @@ function camswitch0() {
             width: w,
             height: h
         }
-    }, function() {
-        console.log('capture ready.')
-    });
-    capture.elt.setAttribute('playsinline', '');
+    };
+    capture = createCapture(constraints);
     capture.hide();
     capture.size(w, h);
     canvas = createCanvas(w, h);
@@ -133,10 +129,8 @@ function camswitch1() {
             width: w,
             height: h
         }
-    }, function() {
-        console.log('capture ready.')
-    });
-    capture.elt.setAttribute('playsinline', '');
+    };
+    capture = createCapture(constraints);
     capture.hide();
     capture.size(w, h);
 }
