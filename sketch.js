@@ -29,7 +29,7 @@ function setup() {
       }
     }
   };
-  capture.elt.setAttribute('playsinline', '');
+  //capture.elt.setAttribute('playsinline', '');
   capture = createCapture(constraints);
   capture.hide();
 
@@ -113,7 +113,7 @@ function camswitch0(){
       }
     }
   };
-  capture.elt.setAttribute('playsinline', '');
+  //capture.elt.setAttribute('playsinline', '');
   capture = createCapture(constraints);
   capture.hide();
 }
@@ -127,7 +127,7 @@ function camswitch1(){
       }
     }
   };
-  capture.elt.setAttribute('playsinline', '');
+  //capture.elt.setAttribute('playsinline', '');
   capture = createCapture(constraints);
   capture.hide();
 }
