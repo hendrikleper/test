@@ -24,7 +24,7 @@ function setup() {
   var constraints = {
     audio: false,
     video: {
-    facingMode: "environment"
+    facingMode: { exact: "environment" }
     }
   };
   //capture.elt.setAttribute('playsinline', '');
@@ -102,36 +102,25 @@ function sleep(millisecondsDuration) {
 function camswitch0() {
   var constraints = {
     audio: false,
-        video: {
-            facingMode: { exact: "user" },
-            //facingMode: "environment",
-            width: w,
-            height: h
-        }
-    }, function() {
-        console.log('capture ready.')
-    });
-    capture.elt.setAttribute('playsinline', '');
-    capture.hide();
-    capture.size(w, h);
-    canvas = createCanvas(w, h);
+    video: {
+      facingMode: "user"
+    }
+  };
+  //capture.elt.setAttribute('playsinline', '');
+  capture = createCapture(constraints);
+  capture.hide();
 }
 
 function camswitch1() {
   var constraints = {
     audio: false,
-        video: {
-            //facingMode: { exact: "environment" },
-            facingMode: "environment",
-            width: w,
-            height: h
-        }
-    }, function() {
-        console.log('capture ready.')
-    });
-    capture.elt.setAttribute('playsinline', '');
-    capture.hide();
-    capture.size(w, h);
+    video: {
+      facingMode: { exact = "environment" }
+    }
+  };
+  //capture.elt.setAttribute('playsinline', '');
+  capture = createCapture(constraints);
+  capture.hide();
 }
 
 function touchStarted() {
