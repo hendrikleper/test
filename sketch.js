@@ -17,7 +17,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth,windowHeight);
   frameRate(30);
-  textSize(42);
+  textSize(40);
   textAlign(CENTER, TOP);
 
   var constraints = {
