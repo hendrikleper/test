@@ -102,6 +102,8 @@ function sleep(millisecondsDuration)
 }
 
 function camswitch0(){
+  stopCapture();
+  capture.remove();
   var constraints = {
     audio: false,
     video: {
@@ -116,6 +118,8 @@ function camswitch0(){
   capture.hide();
 }
 function camswitch1(){
+  stopCapture();
+  capture.remove();
   var constraints = {
     audio: false,
     video: {
@@ -128,6 +132,15 @@ function camswitch1(){
   //capture.elt.setAttribute('playsinline', '');
   capture = createCapture(constraints);
   capture.hide();
+}
+
+function stopCapture() {
+  let stream = capture.elt.srcObject;
+  let tracks = stream.getTracks();
+  tracks.forEach(function(track) {
+    track.stop();
+  });
+  capture.elt.srcObject = null;
 }
 
 function touchStarted () {
