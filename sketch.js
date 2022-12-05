@@ -107,7 +107,7 @@ function camswitch0(){
   var constraints = {
     audio: false,
     video: {
-      facingMode:  facingMode: "user"
+      facingMode: "user"
     }
   };
   //capture.elt.setAttribute('playsinline', '');
