@@ -43,7 +43,7 @@ function draw() {
     state = false;
   }
 
-  image(capture, 0, 0, displayWidth, displayHeight);
+  image(capture, 0, 0, displayWidth, displayHeight+40);
   let currentDate = new Date().getTime();
   let minsLeft = secondsToHms(ceil((startDate - currentDate) / 1000));
 
