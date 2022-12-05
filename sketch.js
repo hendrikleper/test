@@ -7,6 +7,8 @@ let alarmSound;
 let timeTicking;
 let state = true;
 var capture;
+var w = 640;
+var h = 480;
 
 function preload() {
   soundFormats('mp3');
