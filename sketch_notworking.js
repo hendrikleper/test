@@ -7,6 +7,8 @@ let alarmSound;
 let timeTicking;
 let state = true;
 var capture;
+var w = 640;
+var h = 480;
 
 function preload() {
   soundFormats('mp3');
@@ -23,14 +25,17 @@ function setup() {
 
   var constraints = {
     audio: false,
-    video: {
-    facingMode: { exact: "environment" }
-    }
-  };
-  //capture.elt.setAttribute('playsinline', '');
-  capture = createCapture(constraints);
-  capture.hide();
-
+        video: {
+            //facingMode: { exact: "user" },
+            facingMode: "environment",
+            width: w,
+            height: h
+        }
+    };
+    capture = createCapture(constraints);
+    capture.hide();
+    capture.size(w, h);
+    canvas = createCanvas(w, h);
 }
 
 function draw() {
@@ -102,25 +107,32 @@ function sleep(millisecondsDuration) {
 function camswitch0() {
   var constraints = {
     audio: false,
-    video: {
-      facingMode: "user"
-    }
-  };
-  //capture.elt.setAttribute('playsinline', '');
-  capture = createCapture(constraints);
-  capture.hide();
+        video: {
+            facingMode: { exact: "user" },
+            //facingMode: "environment",
+            width: w,
+            height: h
+        }
+    };
+    capture = createCapture(constraints);
+    capture.hide();
+    capture.size(w, h);
+    canvas = createCanvas(w, h);
 }
 
 function camswitch1() {
   var constraints = {
     audio: false,
-    video: {
-      facingMode: { exact = "environment" }
-    }
-  };
-  //capture.elt.setAttribute('playsinline', '');
-  capture = createCapture(constraints);
-  capture.hide();
+        video: {
+            //facingMode: { exact: "environment" },
+            facingMode: "environment",
+            width: w,
+            height: h
+        }
+    };
+    capture = createCapture(constraints);
+    capture.hide();
+    capture.size(w, h);
 }
 
 function touchStarted() {
