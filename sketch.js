@@ -24,10 +24,6 @@ function setup() {
   var constraints = {
     audio: false,
     video: {
-      mandatory: {
-        maxWidth: videoWidth,
-        maxHeight: videoHeight
-      },
       facingMode: {
         ideal: "environment"
       }
@@ -110,10 +106,6 @@ function camswitch0(){
   var constraints = {
     audio: false,
     video: {
-      mandatory: {
-        maxWidth: videoWidth,
-        maxHeight: videoHeight
-      },
       facingMode: {
         exact: "user"
         //facingMode: "user"
@@ -127,10 +119,6 @@ function camswitch1(){
   var constraints = {
     audio: false,
     video: {
-      mandatory: {
-        maxWidth: videoWidth,
-        maxHeight: videoHeight
-      },
       facingMode: {
         exact: "environment"
         //facingMode: "user"
