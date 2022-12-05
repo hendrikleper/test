@@ -17,7 +17,7 @@ function setup() {
   //createCanvas(windowWidth,windowHeight);
   createCanvas(displayWidth, displayHeight);
   frameRate(30);
-  textSize(38);
+  textSize(36);
   textAlign(CENTER, TOP);
 
   var constraints = {
