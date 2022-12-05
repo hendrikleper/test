@@ -10,7 +10,6 @@ var capture;
 
 function preload() {
   soundFormats('mp3');
-  //alarmSound = loadSound('alarm.mp3');
   alarmSound = createAudio('camera-shutter.mp3');
 }
 
@@ -29,7 +28,6 @@ function setup() {
       }
     }
   };
-  //capture.elt.setAttribute('playsinline', '');
   capture = createCapture(constraints);
   capture.hide();
 
@@ -102,34 +100,32 @@ function sleep(millisecondsDuration)
 }
 
 function camswitch0(){
-  stopCapture();
+  //stopCapture();
   capture.remove();
   var constraints = {
     audio: false,
     video: {
       facingMode: {
         exact: "user"
-        //facingMode: "user"
       }
     }
   };
-  //capture.elt.setAttribute('playsinline', '');
+
   capture = createCapture(constraints);
   capture.hide();
 }
 function camswitch1(){
-  stopCapture();
+  //stopCapture();
   capture.remove();
   var constraints = {
     audio: false,
     video: {
       facingMode: {
         exact: "environment"
-        //facingMode: "user"
       }
     }
   };
-  //capture.elt.setAttribute('playsinline', '');
+
   capture = createCapture(constraints);
   capture.hide();
 }
