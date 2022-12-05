@@ -1,7 +1,7 @@
 // sketch voor Lennert
 
 
-let minSelected = 1; // tijd in minuten voor de timer
+let minSelected = 10; // tijd in minuten voor de timer
 let startDate;
 let alarmSound;
 let timeTicking;
@@ -11,15 +11,15 @@ var capture;
 function preload() {
   soundFormats('mp3');
   //alarmSound = loadSound('alarm.mp3');
-  alarmSound = createAudio('alarm.mp3');
+  alarmSound = createAudio('camera-shutter.mp3');
 }
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
   frameRate(30);
-  textSize(50);
+  textSize(42);
   textAlign(CENTER, TOP);
-  
+
   var constraints = {
     audio: false,
     video: {
@@ -40,15 +40,15 @@ function draw() {
     camswitch1();
     state = false;
   }
-  
+
   image(capture, 0, 0, displayHeight, displayWidth);
   let currentDate = new Date().getTime();
   let minsLeft = secondsToHms(ceil((startDate - currentDate) / 1000));
 
   if (currentDate < startDate) {
   	fill(255);
-  	text('there is something going to happen', 0, 300, width);
-  	text((minsLeft), 0, 380, width);
+  	text('THERE IS SOMETHING GOING TO HAPPEN', 0, 100, width);
+  	text((minsLeft), 0, 180, width);
   }
   if ((currentDate >= startDate) && timeTicking) {
     timeTicking = false;
@@ -81,7 +81,7 @@ function stopSound() {
   timeTicking = false;
 }
 
-// Wait a bit & do some functions while cam 2 is on 
+// Wait a bit & do some functions while cam 2 is on
 async function takeABreak()
 {
   await sleep(1000);
@@ -89,7 +89,7 @@ async function takeABreak()
   //save(timeStamp);
   saveCanvas(timeStamp);
   alarmSound.play();
-  await sleep(5000)
+  await sleep(6000)
   state = true;
 }
 
