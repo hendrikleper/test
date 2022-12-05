@@ -23,14 +23,19 @@ function setup() {
 
   var constraints = {
     audio: false,
-    video: {
-    facingMode: "environment"
-    }
-  };
-  //capture.elt.setAttribute('playsinline', '');
-  capture = createCapture(constraints);
-  capture.hide();
-
+        video: {
+            facingMode: { exact: "user" },
+            //facingMode: "environment",
+            width: w,
+            height: h
+        }
+    }, function() {
+        console.log('capture ready.')
+    });
+    capture.elt.setAttribute('playsinline', '');
+    capture.hide();
+    capture.size(w, h);
+    canvas = createCanvas(w, h);
 }
 
 function draw() {
