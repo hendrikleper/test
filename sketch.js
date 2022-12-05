@@ -17,7 +17,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth,windowHeight);
   frameRate(30);
-  textSize(40);
+  textSize(38);
   textAlign(CENTER, TOP);
 
   var constraints = {
@@ -48,7 +48,7 @@ function draw() {
   if (currentDate < startDate) {
   	fill(255);
   	text('THERE IS SOMETHING GOING TO HAPPEN', 0, 100, width);
-  	text((minsLeft), 0, 180, width);
+  	text((minsLeft), 0, 160, width);
   }
   if ((currentDate >= startDate) && timeTicking) {
     timeTicking = false;
