@@ -24,9 +24,7 @@ function setup() {
   var constraints = {
     audio: false,
     video: {
-      facingMode: {
-        exact = "environment"
-      }
+    facingMode: { exact: "environment" }
     }
   };
   //capture.elt.setAttribute('playsinline', '');
@@ -117,9 +115,7 @@ function camswitch1() {
   var constraints = {
     audio: false,
     video: {
-      facingMode: {
-        exact = "environment"
-      }
+      facingMode: { exact = "environment" }
     }
   };
   //capture.elt.setAttribute('playsinline', '');
