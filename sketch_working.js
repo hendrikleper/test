@@ -1,7 +1,7 @@
 // sketch voor Lennert
 
 
-let minSelected = 1; // tijd in minuten voor de timer
+let minSelected = 10; // tijd in minuten voor de timer
 let startDate;
 let alarmSound;
 let timeTicking;
@@ -56,6 +56,7 @@ function draw() {
   }
   if ((currentDate >= startDate) && timeTicking) {
     timeTicking = false;
+
     camswitch0();
     takeABreak();
   }
